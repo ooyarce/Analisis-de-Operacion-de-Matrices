@@ -1,8 +1,8 @@
--Marca/modelo: DELL PRECISION M2800
+- Marca/modelo: DELL PRECISION M2800
 
--Tipo: Notebook
+- Tipo: Notebook
 
--Año adquisición: 2017
+- Año adquisición: 2017
 
 - Procesador:
   - Marca/Modelo: Intel® Core™ i7-4810MQ 
