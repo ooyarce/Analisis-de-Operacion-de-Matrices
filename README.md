@@ -44,7 +44,7 @@
 - Proveedor internet: VTR Banda Ancha S.A.
 
 **- Desempeño MATMUL**
-https://github.com/ooyarce/MCOC2020-P0/issues/1#issue-675418312
+![alt_text](https://github.com/ooyarce/MCOC2020-P0/blob/master/Grafico%20de%2010%20iteraciones.png?raw=true)
 - ¿Como difiere del gráfico del profesor/ayudante?
   - La diferencia entre ambos gráficos está en que la curva de mi gráfica presenta variaciones mucho menos pronunciadas en relación a la     del profesor. La mayoria de los valores     iniciales (0-50) en mi caso hay un tiempo de demora mayor al del profesor. Por otro lado,     entre los valores 50 y 2000 mi computador presenta tiempos de ejecución menores a los   del profesor. Finalmente entre los 2000 y         10000 valores los resultados son idénticos.
   
