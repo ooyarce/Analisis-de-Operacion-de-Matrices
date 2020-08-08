@@ -72,3 +72,5 @@ plt.grid()
 plt.ylabel("Uso Memoria (bytes)")
 plt.xlabel("Tamaño de la matriz")
 plt.show()
+
+
