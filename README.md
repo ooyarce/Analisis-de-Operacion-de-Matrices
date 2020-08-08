@@ -60,7 +60,7 @@
   Estoy usando la versión 1.18.5
   
 - Durante la ejecución de su código ¿se utiliza más de un procesador? Muestre una imagen de su uso de procesador durante alguna corrida para confirmar. 
-  
+  Se utilizan los 4 núcleos y en total son 8 los hilos usado. 
 
 
 
