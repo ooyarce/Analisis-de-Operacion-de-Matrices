@@ -83,7 +83,7 @@
   
 - Durante la ejecución de su código ¿se utiliza más de un procesador? Muestre una imagen de su uso de procesador durante alguna corrida     para confirmar. 
   - Se utilizan los 4 núcleos y en total son 8 los hilos usado. 
-  ![alt_text](https://github.com/ooyarce/MCOC2020-P0/blob/master/Grafico%20de%2010%20iteraciones.png?raw=true)
+  ![alt_text](https://github.com/ooyarce/MCOC2020-P0/blob/master/procesador%20uso.png?raw=true)
 
 
 
