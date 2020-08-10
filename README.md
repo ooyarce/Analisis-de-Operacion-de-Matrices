@@ -70,10 +70,10 @@
   - La diferencia entre ambos gráficos está en que el gráfico del profesor presenta una gran disperción en los valores para diferentes tamaños de N mientras que mi gráfico es mucho más "lineal", hay una variación mucho menor, particularmente en el principio
   
 - ¿A qué se pueden deber las diferencias?
-  - Las diferencias se deben a los diferentes procesadores que hay entre ambos computadores, por ende los tiempos de ejecución varían         levemente. 
+  - Las diferencias se deben a los diferentes algoritmos de resolución de operaciones matriciales. Mi código no está optimizado por lo que no hay forma en que el código que escribí tenga tiempos de resolución más óptimos que otros, hablando en grandes magnitudes. Por otro lado, mi computador no fue capaz de superar las 1000 iteraciones debido a que tomaría horas o días en terminarlo.
   
 - El gráfico de uso de memoria es lineal con el tamaño de matriz, pero el de tiempo transcurrido no lo es ¿porqué puede ser?
-  - Porque la cantidad de memoria usada es una función lineal "y = 2*(N*N)*8 con N fijo", mientras que la función del tiempo toma en         cuento el proceso de multiplicar matrices. Por   otro lado, son muchos los factores que inlfuyen en cuánto se demora el procesar una     operación matemática, como los programas que están abiertos entre otros.
+  - Porque la cantidad de memoria usada es una función lineal "y = 2*(N*N)*8 con N fijo", mientras que la función del tiempo toma en         cuento el proceso de multiplicar         matrices. Por   otro lado, son muchos los factores que inlfuyen en cuánto se demora el procesar una     operación matemática, como los programas que están abiertos entre otros.
   
 - ¿Qué versión de python está usando? 
   - Estoy usando la versión 3.8
