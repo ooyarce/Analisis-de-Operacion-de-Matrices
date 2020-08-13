@@ -84,6 +84,17 @@
 - Durante la ejecución de su código ¿se utiliza más de un procesador? Muestre una imagen de su uso de procesador durante alguna corrida     para confirmar. 
   - Se utilizan los 4 núcleos y en total son 8 los hilos usado. 
   ![alt_text](https://github.com/ooyarce/MCOC2020-P0/blob/master/uso%20procesador.png?raw=true)
+  
+ **- Qué algoritmo de inversión cree que utiliza cada método (ver wiki)?**
+ Las funciones de álgebra lineal de NumPy se basan en BLAS y LAPACK para proporcionar implementaciones eficientes de bajo nivel de algoritmos de álgebra lineal estándar. Esas bibliotecas pueden ser proporcionadas por el propio NumPy utilizando versiones C de un subconjunto de sus implementaciones de referencia pero, cuando es posible, se prefieren las bibliotecas altamente optimizadas que aprovechan la funcionalidad del procesador especializado. Ejemplos de tales bibliotecas son OpenBLAS, MKL (TM) y ATLAS. Debido a que esas bibliotecas son multiproceso y dependen del procesador, es posible que se necesiten variables ambientales y paquetes externos como threadpoolctl para controlar el número de subprocesos o especificar la arquitectura del procesador. Varias de las rutinas de álgebra lineal enumeradas anteriormente pueden calcular resultados para varias matrices a la vez, si se apilan en la misma matriz.
+
+Esto se indica en la documentación a través de especificaciones de parámetros de entrada como: (..., M, M) array_like. Esto significa que si, por ejemplo, se le da una matriz de entrada a.shape == (N, M, M), se interpreta como una "pila" de N matrices, cada una de tamaño M-por-M. Se aplica una especificación similar a los valores de retorno, por ejemplo, el determinante tiene det: (...) y en este caso devolverá una matriz de forma det (a) .shape == (N,). Esto se generaliza a las operaciones de álgebra lineal en matrices de dimensiones superiores: las últimas 1 o 2 dimensiones de una matriz multidimensional se interpretan como vectores o matrices, según corresponda para cada operación.
+
+Cuando SciPy se crea utilizando las bibliotecas optimizadas ATLAS LAPACK y BLAS, tiene capacidades de álgebra lineal muy rápidas. Si profundiza lo suficiente, todas las bibliotecas LAPACK y BLAS sin procesar están disponibles para su uso para una velocidad aún mayor. En esta sección, se describen algunas interfaces más fáciles de usar para estas rutinas.
+
+Todas estas rutinas de álgebra lineal esperan un objeto que se pueda convertir en una matriz 2-D. La salida de estas rutinas también es una matriz 2-D. Si leemos la documentación de BLAS Y ATLAS puedo notar que sus algoritmos se basan en el método de la **Descompósición de Cholesky**.
+
+**¿Como incide el paralelismo y la estructura de caché de su procesador en el desempeño en cada caso? (Ver clase 10 Agosto)**
 
 
 
