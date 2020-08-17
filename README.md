@@ -94,9 +94,11 @@ Cuando SciPy se crea utilizando las bibliotecas optimizadas ATLAS LAPACK y BLAS,
 
 Todas estas rutinas de álgebra lineal esperan un objeto que se pueda convertir en una matriz 2-D. La salida de estas rutinas también es una matriz 2-D. Si leemos la documentación de BLAS Y ATLAS puedo notar que sus algoritmos se basan en el método de la **Descompósición de Cholesky**.
 
-**¿Como incide el paralelismo y la estructura de caché de su procesador en el desempeño en cada caso? (Ver clase 10 Agosto)**
+**ENTREGA 6**
 
-
+La perfomance para las matrices menores e igual a 20x20, tienen un desempeño que es casi a lo esperado; el método más eficiente lo posee numpy y el menos eficiente es el de la scipy pos overwrite, extrañamente, mi algoritmo es el segundo más rapido. Pero me llama la atención que los  módulo "Scipy pos" y "Scipy pos overwrite" sean casi igual de lentos que "Scipy solve, pero analizando la situación se puede deber a que ambos "scipy pos" invierten tiempo en hacer análisis para matrices muy pequeñas y eso los retrasa (analizan la positividad y la simetría), pero a tamaños grandes el tiempo debería ser más optimizado. Otro detalle interesante, son los tiempos obtenidos para matrices de 10x10, extrañamente, el método menos eficiente es el scipy pos, que arroja resultados notablemente mayores a los demás métodos, tal cual como dije antes, debe ser por los procesos de analisis que hace, pero, como no tiene el overwrite, el proceso tampoco está optimizado, entonces, en ello se explica su alta "lentitud".
+Por otro lado, para los rangos de matrices mayores a 20x20 y menores e igual a 10milx10mil, los rendimientos pasan a ser consecuentes con lo esperado, el más lento es el algoritmo escrito por mí y los más rápidos son numpy con scipy pos overwrite. Del módulo scipy, el método menos eficiente es el de scipy simetric, mientras que los scipy con scipy pos y scipy overwrite tienen rendimientos con una diferencia muy pequeña. 
+![alt_text](https://github.com/ooyarce/MCOC2020-P0/blob/master/GraficoE6.png?raw=true)
 
 
 
