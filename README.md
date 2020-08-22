@@ -131,13 +131,16 @@ Por otro lado, para los rangos de matrices mayores a 20x20 y menores e igual a 1
 
 ![alt_text](https://github.com/ooyarce/MCOC2020-P0/blob/master/Entrega%207/INV_DISPERSA.png?raw=true)
 - Comente las diferencias que ve en el comportamiento de los algoritmos en el caso de matrices llenas y dispersas.
-
-- ¿Cual parece la complejidad asintótica (para LaTeX: N\rightarrow\inftyN → ∞)  para el ensamblado y solución en ambos casos y porqué?
-
+  Para los casos de matmul y solve, el algoritmo de la matrices dispersas es mucho más eficiente. Como se puede apreciar en los gráficos, los tiempos de resolución utilizando dispersa son muchos  más bajos en que los tiempos usando llena. Por otro lado, para el caso de la inversa, ocurre algo diferente, el tiempo de resolución de la matriz llena es idéntico al tiempo utilizado con matriz dispersa. En conclusión, podemos decir que utilizando la matriz dispersa se ahorra notablemente el tiempo de ejecucción para los algoritmos utilizados por python, numpy y scipy.
+  
+- ¿Cual parece la complejidad asintótica (para LaTeX: N → ∞)  para el ensamblado y solución en ambos casos y porqué?
+  Podemos notar que para el caso de MATMUL y  SOLVE, la matriz llena con la dispersa tienen un tiempo de ensamblado que tiende a N^2. Por otro lado, la solución para la matriz llena tiende a N^3 mientras que la matriz dispersa tienda a N, demostrando que la dispersa es más eficiente para resolver dichos algoritmos. Respeceto a INV, las matrices llena y dispersa tienen un tiempo de ensamblado que tiende a N^2 pero para el tiempo de solución, la matriz dispersa sigue siendo más eficiente puesto que tiende a N, mientras que la matriz llena tiende a N2.
+  
 - ¿Como afecta el tamaño de las matrices al comportamiento aparente?
-
+  Para el caso de las matrices laplacianas llenas, mientras más grande es el tamaño de las matrices, más lento se pone el proceso, tanto en solución como en ensamblado, es decir, aumentar el tamaño de la matriz enlentece el ensamblado en N^2 y la solución en N^3. Por otro lado, para la matriz dispersa, el tiemnpo de solución no se ve tan afectado, puesto que aumentar el tamaño de la matriz, se enlentece la solución en N. Respecto al ensamblado de la matriz dispersa, aumentar el tamaño de las matrices, enlentece el tiempo en N^2.
+  
 - ¿Qué tan estables son las corridas (se parecen todas entre si siempre, nunca, en un rango)?
-
+  Como lo muestran los graficos, las matrices dispersas son mucho más estables que las llenas. Para los casos MATMUL y SOLVE, el comportamiento de la matriz dispersa es practicamente igual en todo >=10. Por otro lado, el comportamiento de la matriz llena en todos los casos es bastante inestable, sobretodo en el rango perteneciente a [10,100]. Las graficas de las operaciones con matrices llena no se parecen en nada a las gráficas de las matrices dispersas.
 ```
 from numpy import zeros,double
 import numpy as np
@@ -160,7 +163,7 @@ def matriz_laplaciana_dispersa(N,t=np.float32):
 ```
 
 - Comente cómo esta elección se ve reflejada en el desempeño y complejidad algorítmica mostrada. 
-
+Elegir el código más corto y optimizado convierte mpás eficaz el tiempo de desarrollo de las matrices. Elegir dicho código me permitió usar los solvers scipy y numpy de la forma más eficaz.
 
 
 
