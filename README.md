@@ -102,12 +102,64 @@ Todas estas rutinas de álgebra lineal esperan un objeto que se pueda convertir 
 La perfomance para las matrices menores e igual a 20x20, tienen un desempeño que es casi a lo esperado; el método más eficiente lo posee numpy y el menos eficiente es el de la scipy pos overwrite, extrañamente, mi algoritmo es el segundo más rapido. Pero me llama la atención que los  módulo "Scipy pos" y "Scipy pos overwrite" sean casi igual de lentos que "Scipy solve, pero analizando la situación se puede deber a que ambos "scipy pos" invierten tiempo en hacer análisis para matrices muy pequeñas y eso los retrasa (analizan la positividad y la simetría), pero a tamaños grandes el tiempo debería ser más optimizado. Otro detalle interesante, son los tiempos obtenidos para matrices de 10x10, extrañamente, el método menos eficiente es el scipy pos, que arroja resultados notablemente mayores a los demás métodos, tal cual como dije antes, debe ser por los procesos de analisis que hace, pero, como no tiene el overwrite, el proceso tampoco está optimizado, entonces, en ello se explica su alta "lentitud".
 Por otro lado, para los rangos de matrices mayores a 20x20 y menores e igual a 10milx10mil, los rendimientos pasan a ser consecuentes con lo esperado, el más lento es el algoritmo escrito por mí y los más rápidos son numpy con scipy pos overwrite. Del módulo scipy, el método menos eficiente es el de scipy simetric, mientras que los scipy con scipy pos y scipy overwrite tienen rendimientos con una diferencia muy pequeña. 
 
+**Matrices dispersas y complejidad computacional**
+**Complejidad algoritmica de MATMUL**
+
+**MATUL LLENA**
+
+![alt_text](https://github.com/ooyarce/MCOC2020-P0/blob/master/Entrega%207/MATMUL_LLENA.png?raw=true)
 
 
 
+**MATMUL DISPERSA**
 
+![alt_text](https://github.com/ooyarce/MCOC2020-P0/blob/master/Entrega%207/MATMUL_DISPERSA.png?raw=true)
 
+**SOLVE LLENA**
 
+![alt_text](https://github.com/ooyarce/MCOC2020-P0/blob/master/Entrega%207/SOLVE_LLENA.png?raw=true)
+
+**SOLVE DISPERSA**
+
+![alt_text](https://github.com/ooyarce/MCOC2020-P0/blob/master/Entrega%207/SOLVE_DISPERSA.png?raw=true)
+
+**INV LLENA**
+
+![alt_text](https://github.com/ooyarce/MCOC2020-P0/blob/master/Entrega%207/INV_LLENA.png?raw=true)
+
+**INV DISPERSA**
+
+![alt_text](https://github.com/ooyarce/MCOC2020-P0/blob/master/Entrega%207/INV_DISPERSA.png?raw=true)
+- Comente las diferencias que ve en el comportamiento de los algoritmos en el caso de matrices llenas y dispersas.
+
+- ¿Cual parece la complejidad asintótica (para LaTeX: N\rightarrow\inftyN → ∞)  para el ensamblado y solución en ambos casos y porqué?
+
+- ¿Como afecta el tamaño de las matrices al comportamiento aparente?
+
+- ¿Qué tan estables son las corridas (se parecen todas entre si siempre, nunca, en un rango)?
+
+```
+from numpy import zeros,double
+import numpy as np
+from scipy.sparse import lil_matrix,eye
+def matriz_laplaciana_llena(N, t = np.float32):
+    e = np.eye(N)-np.eye(N,N,1) 
+    return t(e+e.T)
+def matriz_laplaciana_dispersa(N,t=np.float32):
+    A = lil_matrix((N,N))
+    for i in range(N):
+        for j in range(N):
+            if i == j:
+                A[i,j] = 2
+            if i+1 == j:
+                A[i,j] = -1
+            if i-1 == j:
+                A[i,j] = -1
+    return A
+
+```
+
+- Comente cómo esta elección se ve reflejada en el desempeño y complejidad algorítmica mostrada. 
 
 
 
