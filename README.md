@@ -112,7 +112,7 @@ Cuando SciPy se crea utilizando las bibliotecas optimizadas ATLAS LAPACK y BLAS,
 
 Todas estas rutinas de álgebra lineal esperan un objeto que se pueda convertir en una matriz 2-D. La salida de estas rutinas también es una matriz 2-D. Si leemos la documentación de BLAS Y ATLAS puedo notar que sus algoritmos se basan en el método de la **Descompósición de Cholesky**.
 
-**ENTREGA 6**
+**Rendimiento en base a la inversión de matrices**
 
 ![alt_text](https://github.com/ooyarce/MCOC2020-P0/blob/master/GraficoE6.png?raw=true)
 
@@ -122,7 +122,7 @@ Por otro lado, para los rangos de matrices mayores a 20x20 y menores e igual a 1
 
 **Matrices dispersas y complejidad computacional**
 **Complejidad algoritmica de multiplicación de matrices**
-Se presentan gráficos de rendimiento de operaciones lineales de matrices
+Se presentan gráficos de rendimiento de operaciones lineales de matrices en base a distintos tamaños y algoritmos de matrices
 **Matrices Llenas**
 
 ![alt_text](https://github.com/ooyarce/MCOC2020-P0/blob/master/Entrega%207/MATMUL_LLENA.png?raw=true)
