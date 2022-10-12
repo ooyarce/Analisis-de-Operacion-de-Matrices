@@ -1,3 +1,17 @@
+La solución de problemas complejos (y muchas veces no tan complejos) en obras civiles requiere del uso de computadores personales o dedicados para la ejecución de programas que ayudan a buscar e implementar soluciones. Estos programas resuelven sub-problemas que se modelan utilizando herramientas matemáticas como las que se han aprendido hasta ahora (álgebra lineal, ecuaciones diferenciales, probabilidades, estadística, etc. ) y cuyo rendimiento es clave para la solución rápida y eficiente de los problemas de ingeniería. 
+
+En este proyecto inicial haremos "benchmarking" de nuestros computadores de trabajo en distintos indicadores de desempeño frente a distintas cargas. Aprenderemos a medir el desempeño de nuestro sistema frente a distintas tareas y como cambia el mismo frente a distintos "tamaños" de estas tareas. Con esto aprenderemos acerca de distintos factores que contribuyen o afectan el desempeño de nuestros programas y podremos tomar decisiones realistas a la hora de implementar una solución computacional a un problema en la vida real. 
+
+**Objetivo**
+
+Medir el tiempo que toma (y uso de memoria) al resolver los siguientes problemas:
+
+-Multiplicación de matrices (matmul)
+-Solución de sistemas de ecuaciones (solve)
+-Inversión de matrices (inv)
+-Problemas de valores y vectores propios para matrices hermitianas de valores reales (eigh)
+-En función de distintos tamaños de las matrices involucradas. Explorar distinta estrategias (implementación manual, uso de librerías, explotación de simetría,   paralelismo, matrices dispersas) para entender como estas afectan el desempeño de sus programas. 
+
 - Marca/modelo: DELL PRECISION M2800
 
 - Tipo: Notebook
