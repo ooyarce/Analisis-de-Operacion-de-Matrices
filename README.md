@@ -184,10 +184,6 @@ def matriz_laplaciana_dispersa(N,t=np.float32):
 
 ```
 
-- Comente cómo esta elección se ve reflejada en el desempeño y complejidad algorítmica mostrada. 
-Elegir el código más corto y optimizado convierte mpás eficaz el tiempo de desarrollo de las matrices. Elegir dicho código me permitió usar los solvers scipy y numpy de la forma más eficaz.
-
-
 
 
 
