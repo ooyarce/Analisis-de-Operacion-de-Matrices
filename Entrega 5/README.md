@@ -21,4 +21,4 @@ Para los tipos de datos que sean distintos en su sistema, determine la eficienci
 -Para la función ```scipy.linalg.inv``` con ```overwrite_a=True``` considerando el uso de memoria exigida por cada tipo de dato, para una matriz Laplaciana de la siguientes formas:
 
 
-Monitorée el uso de memoria y procesadores en cada caso y comente lo que ve a la luz de lo discutido en la clase del 10 de Agosto de 2020. Nombre cada script python de la siguiente manera ```timing_inv_caso_X_dtype.py```. Por ejemplo, el caso 2 usando tipo de datos longdouble sería llamado ```timing_inv_caso_2_longdouble.py```.
+Monitorear el uso de memoria y procesadores en cada caso y comente lo que ve a la luz de lo discutido en la clase del 10 de Agosto de 2020. Nombre cada script python de la siguiente manera ```timing_inv_caso_X_dtype.py```. Por ejemplo, el caso 2 usando tipo de datos longdouble sería llamado ```timing_inv_caso_2_longdouble.py```.
