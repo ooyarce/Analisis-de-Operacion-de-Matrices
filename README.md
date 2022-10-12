@@ -1,9 +1,10 @@
-**Enunciado**
+**Enunciado:**
+
 La solución de problemas complejos (y muchas veces no tan complejos) en obras civiles requiere del uso de computadores personales o dedicados para la ejecución de programas que ayudan a buscar e implementar soluciones. Estos programas resuelven sub-problemas que se modelan utilizando herramientas matemáticas como las que se han aprendido hasta ahora (álgebra lineal, ecuaciones diferenciales, probabilidades, estadística, etc. ) y cuyo rendimiento es clave para la solución rápida y eficiente de los problemas de ingeniería. 
 
 En este proyecto inicial haremos "benchmarking" de nuestros computadores de trabajo en distintos indicadores de desempeño frente a distintas cargas. Aprenderemos a medir el desempeño de nuestro sistema frente a distintas tareas y como cambia el mismo frente a distintos "tamaños" de estas tareas. Con esto aprenderemos acerca de distintos factores que contribuyen o afectan el desempeño de nuestros programas y podremos tomar decisiones realistas a la hora de implementar una solución computacional a un problema en la vida real. 
 
-**Objetivos**
+**Objetivos:**
 
 Medir el tiempo que toma (y uso de memoria) al resolver los siguientes problemas:
 
@@ -12,6 +13,8 @@ Medir el tiempo que toma (y uso de memoria) al resolver los siguientes problemas
 -Inversión de matrices (inv)
 -Problemas de valores y vectores propios para matrices hermitianas de valores reales (eigh)
 -En función de distintos tamaños de las matrices involucradas. Explorar distinta estrategias (implementación manual, uso de librerías, explotación de simetría,   paralelismo, matrices dispersas) para entender como estas afectan el desempeño de sus programas. 
+
+**Especificaciones del computador:**
 
 - Marca/modelo: DELL PRECISION M2800
 
@@ -58,7 +61,7 @@ Medir el tiempo que toma (y uso de memoria) al resolver los siguientes problemas
 
 - Proveedor internet: VTR Banda Ancha S.A.
 
-**- Desempeño MATMUL**
+**- Desempeño en la multiplicación de matrices**
 
 ![alt_text](https://github.com/ooyarce/MCOC2020-P0/blob/master/Grafico%20de%2010%20iteraciones.png?raw=true)
 - ¿Como difiere del gráfico del profesor/ayudante?
@@ -100,7 +103,7 @@ Medir el tiempo que toma (y uso de memoria) al resolver los siguientes problemas
   - Se utilizan los 4 núcleos y en total son 8 los hilos usado. 
   ![alt_text](https://github.com/ooyarce/MCOC2020-P0/blob/master/uso%20procesador.png?raw=true)
   
- **- Qué algoritmo de inversión cree que utiliza cada método (ver wiki)?**
+ **Algoritmo de inversión cree que utiliza cada método:**
  Las funciones de álgebra lineal de NumPy se basan en BLAS y LAPACK para proporcionar implementaciones eficientes de bajo nivel de algoritmos de álgebra lineal estándar. Esas bibliotecas pueden ser proporcionadas por el propio NumPy utilizando versiones C de un subconjunto de sus implementaciones de referencia pero, cuando es posible, se prefieren las bibliotecas altamente optimizadas que aprovechan la funcionalidad del procesador especializado. Ejemplos de tales bibliotecas son OpenBLAS, MKL (TM) y ATLAS. Debido a que esas bibliotecas son multiproceso y dependen del procesador, es posible que se necesiten variables ambientales y paquetes externos como threadpoolctl para controlar el número de subprocesos o especificar la arquitectura del procesador. Varias de las rutinas de álgebra lineal enumeradas anteriormente pueden calcular resultados para varias matrices a la vez, si se apilan en la misma matriz.
 
 Esto se indica en la documentación a través de especificaciones de parámetros de entrada como: (..., M, M) array_like. Esto significa que si, por ejemplo, se le da una matriz de entrada a.shape == (N, M, M), se interpreta como una "pila" de N matrices, cada una de tamaño M-por-M. Se aplica una especificación similar a los valores de retorno, por ejemplo, el determinante tiene det: (...) y en este caso devolverá una matriz de forma det (a) .shape == (N,). Esto se generaliza a las operaciones de álgebra lineal en matrices de dimensiones superiores: las últimas 1 o 2 dimensiones de una matriz multidimensional se interpretan como vectores o matrices, según corresponda para cada operación.
@@ -118,15 +121,15 @@ La perfomance para las matrices menores e igual a 20x20, tienen un desempeño qu
 Por otro lado, para los rangos de matrices mayores a 20x20 y menores e igual a 10milx10mil, los rendimientos pasan a ser consecuentes con lo esperado, el más lento es el algoritmo escrito por mí y los más rápidos son numpy con scipy pos overwrite. Del módulo scipy, el método menos eficiente es el de scipy simetric, mientras que los scipy con scipy pos y scipy overwrite tienen rendimientos con una diferencia muy pequeña. 
 
 **Matrices dispersas y complejidad computacional**
-**Complejidad algoritmica de MATMUL**
-
-**MATUL LLENA**
+**Complejidad algoritmica de multiplicación de matrices**
+Se presentan gráficos de rendimiento de operaciones lineales de matrices
+**Matrices Llenas**
 
 ![alt_text](https://github.com/ooyarce/MCOC2020-P0/blob/master/Entrega%207/MATMUL_LLENA.png?raw=true)
 
 
 
-**MATMUL DISPERSA**
+**Matrices Dispersas**
 
 ![alt_text](https://github.com/ooyarce/MCOC2020-P0/blob/master/Entrega%207/MATMUL_DISPERSA.png?raw=true)
 
