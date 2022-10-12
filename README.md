@@ -9,9 +9,13 @@ En este proyecto inicial haremos "benchmarking" de nuestros computadores de trab
 Medir el tiempo que toma (y uso de memoria) al resolver los siguientes problemas:
 
 -Multiplicación de matrices (matmul)
+
 -Solución de sistemas de ecuaciones (solve)
+
 -Inversión de matrices (inv)
+
 -Problemas de valores y vectores propios para matrices hermitianas de valores reales (eigh)
+
 -En función de distintos tamaños de las matrices involucradas. Explorar distinta estrategias (implementación manual, uso de librerías, explotación de simetría,   paralelismo, matrices dispersas) para entender como estas afectan el desempeño de sus programas. 
 
 **Especificaciones del computador:**
